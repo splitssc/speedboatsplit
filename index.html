@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5DD29Z9K');</script>
-<!-- End Google Tag Manager -->
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5DD29Z9K');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mario M | Speedboat Tours Croatia</title>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -62,6 +64,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
         }
     </script>
+
     <style>
         /* Custom animations and naval styling */
         @keyframes float {
@@ -85,17 +88,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             border: 1px solid rgba(186, 230, 253, 0.8);
             box-shadow: 0 10px 30px -5px rgba(2, 132, 199, 0.08);
         }
-        .glass-modal {
-            background: rgba(240, 249, 255, 0.97);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(56, 189, 248, 0.4);
-        }
         .naval-border {
             border: 2px solid #bae6fd;
         }
         .nautical-stripe {
             background-image: repeating-linear-gradient(-45deg, rgba(2, 132, 199, 0.03), rgba(2, 132, 199, 0.03) 12px, transparent 12px, transparent 24px);
+        }
+        .stripe-btn-glow {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px 0 rgba(99, 91, 255, 0.39);
+        }
+        .stripe-btn-glow:hover {
+            box-shadow: 0 6px 20px 0 rgba(99, 91, 255, 0.55);
+            transform: translateY(-1px);
         }
         /* Hide scrollbars for clean look */
         .no-scrollbar::-webkit-scrollbar {
@@ -107,11 +112,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
     </style>
 </head>
+
 <body class="bg-baby-100 text-navy-900 font-sans selection:bg-baby-300 selection:text-navy-900 antialiased min-h-screen relative overflow-x-hidden nautical-stripe">
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DD29Z9K"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DD29Z9K"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- Background Water Graphics & Naval Motifs -->
     <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
@@ -203,7 +209,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <!-- QR Code Widget -->
                     <div class="flex items-center gap-3 bg-white p-3 rounded-2xl border border-baby-300 shadow-sm w-full sm:w-auto justify-center">
                         <div class="bg-baby-50 p-1 rounded-xl border border-baby-200">
-                            <!-- QR Code generated via API pointing directly to WhatsApp -->
+                            <!-- QR Code pointing directly to WhatsApp -->
                             <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://wa.me/385923252445" 
                                  alt="WhatsApp QR Code Mario M Speedboat" 
                                  class="w-20 h-20 object-contain rounded"
@@ -233,8 +239,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </h2>
             </div>
             <div class="flex items-center gap-2 text-xs font-semibold text-baby-800 bg-white px-3.5 py-1.5 rounded-xl border border-baby-300 shadow-sm">
-                <i class="fa-solid fa-lock text-emerald-600"></i>
-                <span>Secure Deposit via <strong>Stripe</strong></span>
+                <i class="fa-brands fa-stripe text-indigo-600 text-lg"></i>
+                <span>Instant Checkout via <strong>Stripe</strong></span>
             </div>
         </div>
 
@@ -302,11 +308,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </label>
                             <div class="grid grid-cols-2 gap-2 text-xs">
                                 <label class="cursor-pointer bg-white border border-baby-300 rounded-xl p-2.5 flex items-center gap-2 hover:border-baby-500 transition-colors shadow-sm">
-                                    <input type="radio" name="time_tour_1" value="Morning (09:00 - 14:00)" checked class="accent-baby-600">
+                                    <input type="radio" name="time_tour_1" value="morning" checked onchange="updateStripeLink(1)" class="accent-baby-600">
                                     <span class="text-navy-900"><strong>Morning</strong><br><span class="text-[11px] text-navy-600">09:00 - 14:00</span></span>
                                 </label>
                                 <label class="cursor-pointer bg-white border border-baby-300 rounded-xl p-2.5 flex items-center gap-2 hover:border-baby-500 transition-colors shadow-sm">
-                                    <input type="radio" name="time_tour_1" value="Afternoon (14:30 - 19:00)" class="accent-baby-600">
+                                    <input type="radio" name="time_tour_1" value="afternoon" onchange="updateStripeLink(1)" class="accent-baby-600">
                                     <span class="text-navy-900"><strong>Afternoon</strong><br><span class="text-[11px] text-navy-600">14:30 - 19:00</span></span>
                                 </label>
                             </div>
@@ -314,16 +320,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
 
-                <!-- Reserve Action Buttons -->
+                <!-- Reserve Action Buttons with Direct Dummy Stripe Links -->
                 <div class="p-5 pt-0 space-y-2">
-                    <button onclick="openBookingModal('1', 'Private Speedboat Tour', 600, 100, true)"
-                            class="w-full py-3 bg-gradient-to-r from-baby-600 to-baby-700 hover:from-baby-500 hover:to-baby-600 text-white font-extrabold rounded-xl shadow-md shadow-baby-600/30 active:scale-95 transition-all flex items-center justify-center gap-2 text-sm">
-                        <i class="fa-solid fa-credit-card"></i>
-                        <span>Reserve Now (€100 Deposit)</span>
-                    </button>
+                    <a id="stripe-link-1" 
+                       href="https://buy.stripe.com/00w28r4302zMekO0u763K02" 
+                       target="_blank" 
+                       rel="noopener"
+                       class="w-full py-3 bg-gradient-to-r from-indigo-600 via-indigo-700 to-purple-700 hover:from-indigo-500 hover:to-purple-600 text-white font-extrabold rounded-xl stripe-btn-glow active:scale-95 transition-all flex items-center justify-center gap-2 text-sm">
+                        <i class="fa-brands fa-stripe text-lg"></i>
+                        <span>Pay €100 Deposit on Stripe</span>
+                    </a>
 
                     <a href="https://wa.me/385923252445?text=Hi%20Mario,%20I'm%20interested%20in%20the%20Private%20Speedboat%20Tour%20(600%E2%82%AC)." 
                        target="_blank" 
+                       rel="noopener"
                        class="w-full py-2 text-center text-xs font-bold text-baby-700 hover:text-navy-900 flex items-center justify-center gap-1.5 transition-colors">
                         <i class="fa-brands fa-whatsapp text-emerald-600 text-sm"></i> Ask Question on WhatsApp
                     </a>
@@ -391,11 +401,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </label>
                             <div class="grid grid-cols-2 gap-2 text-xs">
                                 <label class="cursor-pointer bg-white border border-baby-300 rounded-xl p-2.5 flex items-center gap-2 hover:border-baby-500 transition-colors shadow-sm">
-                                    <input type="radio" name="time_tour_2" value="Morning (09:30 - 14:00)" checked class="accent-baby-600">
+                                    <input type="radio" name="time_tour_2" value="morning" checked onchange="updateStripeLink(2)" class="accent-baby-600">
                                     <span class="text-navy-900"><strong>Morning</strong><br><span class="text-[11px] text-navy-600">09:30 - 14:00</span></span>
                                 </label>
                                 <label class="cursor-pointer bg-white border border-baby-300 rounded-xl p-2.5 flex items-center gap-2 hover:border-baby-500 transition-colors shadow-sm">
-                                    <input type="radio" name="time_tour_2" value="Afternoon (14:30 - 19:00)" class="accent-baby-600">
+                                    <input type="radio" name="time_tour_2" value="afternoon" onchange="updateStripeLink(2)" class="accent-baby-600">
                                     <span class="text-navy-900"><strong>Afternoon</strong><br><span class="text-[11px] text-navy-600">14:30 - 19:00</span></span>
                                 </label>
                             </div>
@@ -403,16 +413,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
 
-                <!-- Reserve Action Buttons -->
+                <!-- Reserve Action Buttons with Direct Dummy Stripe Links -->
                 <div class="p-5 pt-0 space-y-2">
-                    <button onclick="openBookingModal('2', 'Half Day Tour: Trogir – Blue Lagoon – Čiovo', 65, 10, false)"
-                            class="w-full py-3 bg-gradient-to-r from-baby-600 to-baby-700 hover:from-baby-500 hover:to-baby-600 text-white font-extrabold rounded-xl shadow-md shadow-baby-600/30 active:scale-95 transition-all flex items-center justify-center gap-2 text-sm">
-                        <i class="fa-solid fa-credit-card"></i>
-                        <span>Reserve Now (€10 Deposit)</span>
-                    </button>
+                    <a id="stripe-link-2" 
+                       href="https://buy.stripe.com/28E9AT7fc7U6b8C3Gj63K00" 
+                       target="_blank" 
+                       rel="noopener"
+                       class="w-full py-3 bg-gradient-to-r from-indigo-600 via-indigo-700 to-purple-700 hover:from-indigo-500 hover:to-purple-600 text-white font-extrabold rounded-xl stripe-btn-glow active:scale-95 transition-all flex items-center justify-center gap-2 text-sm">
+                        <i class="fa-brands fa-stripe text-lg"></i>
+                        <span>Pay €10 Deposit on Stripe</span>
+                    </a>
 
                     <a href="https://wa.me/385923252445?text=Hi%20Mario,%20I'm%20interested%20in%20the%20Trogir%20%26%20Blue%20Lagoon%20Tour%20(65%E2%82%AC/person)." 
                        target="_blank" 
+                       rel="noopener"
                        class="w-full py-2 text-center text-xs font-bold text-baby-700 hover:text-navy-900 flex items-center justify-center gap-1.5 transition-colors">
                         <i class="fa-brands fa-whatsapp text-emerald-600 text-sm"></i> Ask Question on WhatsApp
                     </a>
@@ -480,11 +494,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </label>
                             <div class="grid grid-cols-2 gap-2 text-xs">
                                 <label class="cursor-pointer bg-white border border-baby-300 rounded-xl p-2.5 flex items-center gap-2 hover:border-baby-500 transition-colors shadow-sm">
-                                    <input type="radio" name="time_tour_3" value="Morning (09:30 - 14:00)" checked class="accent-baby-600">
+                                    <input type="radio" name="time_tour_3" value="morning" checked onchange="updateStripeLink(3)" class="accent-baby-600">
                                     <span class="text-navy-900"><strong>Morning</strong><br><span class="text-[11px] text-navy-600">09:30 - 14:00</span></span>
                                 </label>
                                 <label class="cursor-pointer bg-white border border-baby-300 rounded-xl p-2.5 flex items-center gap-2 hover:border-baby-500 transition-colors shadow-sm">
-                                    <input type="radio" name="time_tour_3" value="Afternoon (14:30 - 19:00)" class="accent-baby-600">
+                                    <input type="radio" name="time_tour_3" value="afternoon" onchange="updateStripeLink(3)" class="accent-baby-600">
                                     <span class="text-navy-900"><strong>Afternoon</strong><br><span class="text-[11px] text-navy-600">14:30 - 19:00</span></span>
                                 </label>
                             </div>
@@ -492,16 +506,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
 
-                <!-- Reserve Action Buttons -->
+                <!-- Reserve Action Buttons with Direct Dummy Stripe Links -->
                 <div class="p-5 pt-0 space-y-2">
-                    <button onclick="openBookingModal('3', 'Half Day Tour: Maslinica – Blue Lagoon – Čiovo', 65, 10, false)"
-                            class="w-full py-3 bg-gradient-to-r from-baby-600 to-baby-700 hover:from-baby-500 hover:to-baby-600 text-white font-extrabold rounded-xl shadow-md shadow-baby-600/30 active:scale-95 transition-all flex items-center justify-center gap-2 text-sm">
-                        <i class="fa-solid fa-credit-card"></i>
-                        <span>Reserve Now (€10 Deposit)</span>
-                    </button>
+                    <a id="stripe-link-3" 
+                       href="https://buy.stripe.com/8x26oH1USgqCgsW5Or63K01" 
+                       target="_blank" 
+                       rel="noopener"
+                       class="w-full py-3 bg-gradient-to-r from-indigo-600 via-indigo-700 to-purple-700 hover:from-indigo-500 hover:to-purple-600 text-white font-extrabold rounded-xl stripe-btn-glow active:scale-95 transition-all flex items-center justify-center gap-2 text-sm">
+                        <i class="fa-brands fa-stripe text-lg"></i>
+                        <span>Pay €10 Deposit on Stripe</span>
+                    </a>
 
                     <a href="https://wa.me/385923252445?text=Hi%20Mario,%20I'm%20interested%20in%20the%20Maslinica%20%26%20Blue%20Lagoon%20Tour%20(65%E2%82%AC/person)." 
                        target="_blank" 
+                       rel="noopener"
                        class="w-full py-2 text-center text-xs font-bold text-baby-700 hover:text-navy-900 flex items-center justify-center gap-1.5 transition-colors">
                         <i class="fa-brands fa-whatsapp text-emerald-600 text-sm"></i> Ask Question on WhatsApp
                     </a>
@@ -510,171 +528,90 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         </div>
 
-        <!-- WHY BOOK WITH MARIO M SECTION -->
-        <section class="glass-card rounded-2xl p-5 sm:p-6 border border-baby-300 mt-8">
-            <h3 class="text-lg font-extrabold text-navy-900 flex items-center gap-2 mb-4">
-                <i class="fa-solid fa-dharmachakra text-baby-600"></i>
-                Why Cruise with Naval Split?
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-navy-700">
-                <div class="bg-white p-4 rounded-xl border border-baby-200 shadow-sm">
-                    <div class="text-baby-600 text-xl mb-2"><i class="fa-solid fa-anchor"></i></div>
-                    <strong class="text-navy-900 text-sm block mb-1">Local Adriatic Knowledge</strong>
-                    <p class="text-navy-600">Deep marine experience ensuring secret swim spots, smooth rides, and top-tier Croatian hospitality.</p>
+        <!-- TRUST & BOOKING HIGHLIGHTS FOOTER BANNER -->
+        <section class="glass-card rounded-2xl p-6 border border-baby-300 shadow-md">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-baby-200 flex items-center justify-center text-baby-700 shrink-0">
+                        <i class="fa-solid fa-cloud-sun-rain text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-navy-900 text-sm">Flexible Weather Guarantee</h4>
+                        <p class="text-xs text-navy-600 mt-0.5">Bad sea conditions? Free reschedule or 100% deposit refund immediately.</p>
+                    </div>
                 </div>
-                <div class="bg-white p-4 rounded-xl border border-baby-200 shadow-sm">
-                    <div class="text-baby-600 text-xl mb-2"><i class="fa-solid fa-life-ring"></i></div>
-                    <strong class="text-navy-900 text-sm block mb-1">All Equipment Included</strong>
-                    <p class="text-navy-600">No hidden costs. Snorkel masks, life vests, wind protection jackets, and fuel are fully covered.</p>
+
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-700 shrink-0">
+                        <i class="fa-solid fa-bolt text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-navy-900 text-sm">Instant Confirmation</h4>
+                        <p class="text-xs text-navy-600 mt-0.5">Pay deposit securely via Stripe and get instant reservation confirmation.</p>
+                    </div>
                 </div>
-                <div class="bg-white p-4 rounded-xl border border-baby-200 shadow-sm">
-                    <div class="text-baby-600 text-xl mb-2"><i class="fa-solid fa-shield-halved"></i></div>
-                    <strong class="text-navy-900 text-sm block mb-1">Instant Direct Reservation</strong>
-                    <p class="text-navy-600">Reserve easily via Stripe deposit, or reach our agent Mario instantly on WhatsApp for live updates.</p>
+
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-700 shrink-0">
+                        <i class="fa-solid fa-shield-cat text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-navy-900 text-sm">Certified Local Captain</h4>
+                        <p class="text-xs text-navy-600 mt-0.5">Professional licensed skipper with years of local Dalmatian coast experience.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- FOOTER -->
-        <footer class="text-center text-xs text-navy-600 pt-4 pb-8 space-y-2">
-            <p class="flex items-center justify-center gap-2">
-                <i class="fa-solid fa-anchor text-baby-500"></i>
-                &copy; <span id="year">2026</span>Speedboat Tours Croatia. All rights reserved.
-            </p>
-            <p class="flex items-center justify-center gap-4 text-navy-700 font-semibold">
-                <a href="tel:+385923252445" class="hover:text-baby-700 transition-colors"><i class="fa-solid fa-phone text-xs mr-1 text-baby-600"></i>+385 92 325 2445</a>
-                <span>&bull;</span>
-                <a href="https://wa.me/385923252445" target="_blank" class="hover:text-emerald-600 transition-colors"><i class="fa-brands fa-whatsapp text-xs mr-1 text-emerald-600"></i>WhatsApp</a>
-            </p>
+        <footer class="text-center py-4 text-xs text-navy-600 border-t border-baby-200">
+            <p>© <span id="year"></span> Mario M. Speedboat Tours Croatia. All rights reserved.</p>
+            <p class="mt-1 text-[11px] text-baby-700">Split & Trogir Riviera • Contact: +385 92 325 2445</p>
         </footer>
 
     </main>
 
-    <!-- RESERVATION MODAL -->
-    <div id="bookingModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-navy-900/60 backdrop-blur-md transition-all">
-        <div class="glass-modal w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl border border-baby-300 relative">
-            
-            <!-- Modal Header -->
-            <div class="bg-gradient-to-r from-baby-600 to-baby-700 p-5 text-white flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-dharmachakra text-white text-lg"></i>
-                    <h3 class="font-bold text-lg text-white font-display" id="modalTourTitle">Reserve Tour</h3>
-                </div>
-                <button onclick="closeBookingModal()" class="w-8 h-8 rounded-full bg-white/20 text-white hover:bg-white/30 flex items-center justify-center transition-colors">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <!-- Modal Body -->
-            <div class="p-6 space-y-5 text-navy-900">
-                
-                <!-- Tour Summary Box -->
-                <div class="bg-white rounded-2xl p-4 border border-baby-300 space-y-2 text-xs shadow-sm">
-                    <div class="flex justify-between text-navy-600">
-                        <span>Selected Tour:</span>
-                        <strong class="text-navy-900 font-semibold" id="modalTourNameSummary">-</strong>
-                    </div>
-                    <div class="flex justify-between text-navy-600">
-                        <span>Departure Time:</span>
-                        <strong class="text-baby-700 font-bold" id="modalTimeSummary">-</strong>
-                    </div>
-                    <div class="flex justify-between text-navy-600" id="guestsRow">
-                        <span>Number of Guests:</span>
-                        <div class="flex items-center gap-2">
-                            <button onclick="updateGuests(-1)" class="w-6 h-6 bg-baby-200 hover:bg-baby-300 text-navy-900 rounded font-bold flex items-center justify-center">-</button>
-                            <span class="font-bold text-navy-900 px-1 text-sm" id="guestCount">1</span>
-                            <button onclick="updateGuests(1)" class="w-6 h-6 bg-baby-200 hover:bg-baby-300 text-navy-900 rounded font-bold flex items-center justify-center">+</button>
-                        </div>
-                    </div>
-                    <div class="pt-2 border-t border-baby-200 flex justify-between items-center text-sm">
-                        <span class="font-bold text-navy-900">Required Stripe Deposit:</span>
-                        <span class="text-xl font-black text-baby-700" id="modalDepositTotal">€0</span>
-                    </div>
-                </div>
-
-                <!-- Reservation Form -->
-                <div class="space-y-3 text-xs">
-                    <div>
-                        <label class="block text-navy-800 font-bold mb-1">Your Full Name *</label>
-                        <input type="text" id="guestName" placeholder="e.g. John Doe" 
-                               class="w-full bg-white border border-baby-300 rounded-xl px-3.5 py-2.5 text-navy-900 focus:outline-none focus:border-baby-500 shadow-sm">
-                    </div>
-                    <div>
-                        <label class="block text-navy-800 font-bold mb-1">Preferred Date *</label>
-                        <input type="date" id="tourDate" 
-                               class="w-full bg-white border border-baby-300 rounded-xl px-3.5 py-2.5 text-navy-900 focus:outline-none focus:border-baby-500 shadow-sm">
-                    </div>
-                </div>
-
-                <!-- Custom Stripe Link Configuration -->
-                <div class="bg-baby-100/80 p-3 rounded-xl border border-baby-200 text-[11px] text-navy-700 space-y-1">
-                    <div class="flex items-center gap-1.5 text-navy-900 font-bold">
-                        <i class="fa-brands fa-stripe text-indigo-600 text-base"></i>
-                        <span>Secure Stripe Checkout</span>
-                    </div>
-                    <p>Clicking <strong>Pay Deposit via Stripe</strong> opens direct payment to confirm your speedboat spot with Naval Split</p>
-                </div>
-
-                <!-- Modal Action Buttons -->
-                <div class="space-y-2 pt-1">
-                    <button onclick="proceedToStripe()" 
-                            class="w-full py-3.5 bg-gradient-to-r from-baby-600 via-baby-700 to-navy-900 hover:opacity-95 text-white font-extrabold rounded-xl shadow-lg shadow-baby-600/30 active:scale-95 transition-all flex items-center justify-center gap-2 text-sm">
-                        <i class="fa-solid fa-lock"></i>
-                        <span>Pay Deposit via Stripe (<span id="btnDepositTotal">€10</span>)</span>
-                    </button>
-
-                    <button onclick="proceedToWhatsApp()" 
-                            class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl active:scale-95 transition-all flex items-center justify-center gap-2 text-xs shadow-sm">
-                        <i class="fa-brands fa-whatsapp text-sm"></i>
-                        <span>Confirm via WhatsApp Direct Message</span>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- ... existing JS functions ... -->
     <script>
-        // ... existing script code ...
-        // Custom Notification Toast function (Updated for baby blue theme)
-        function showToast(message) {
-            const toast = document.createElement('div');
-            toast.className = 'fixed bottom-6 right-6 z-50 bg-white border-2 border-baby-400 text-navy-900 px-5 py-3 rounded-2xl shadow-2xl text-xs font-bold flex items-center gap-2.5 transition-all transform translate-y-4 opacity-0';
-            toast.innerHTML = `<i class="fa-solid fa-dharmachakra text-baby-600 text-base animate-spin-slow"></i> <span>${message}</span>`;
-            document.body.appendChild(toast);
+        // Set dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-            setTimeout(() => {
-                toast.classList.remove('translate-y-4', 'opacity-0');
-            }, 50);
+        // Dynamically update Stripe Links based on selected time slot
+        function updateStripeLink(tourId) {
+            const selectedSlot = document.querySelector(`input[name="time_tour_${tourId}"]:checked`).value;
+            const stripeLinkElem = document.getElementById(`stripe-link-${tourId}`);
+            
+            // Map tours to dummy Stripe checkout link bases
+            const dummyStripeUrls = {
+                1: 'https://buy.stripe.com/test_100_deposit_private_tour',
+                2: 'https://buy.stripe.com/test_10_deposit_trogir_blue_lagoon',
+                3: 'https://buy.stripe.com/test_10_deposit_maslinica_blue_lagoon'
+            };
 
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'translate-y-4');
-                setTimeout(() => toast.remove(), 300);
-            }, 4000);
+            const baseUrl = dummyStripeUrls[tourId];
+            stripeLinkElem.href = `${baseUrl}?slot=${selectedSlot}`;
         }
 
-        // Generate and Download vCard (.vcf)
+        // Generate dynamic vCard contact file download
         function downloadVCard() {
             const vCardData = `BEGIN:VCARD
 VERSION:3.0
-FN:Mario M. Speedboat Tours
-N:M.;Mario;;;
-ORG:Mario M. Speedboat Tours Croatia
-TITLE:Speedboat Agent
+N:M;Mario;;;
+FN:Mario M - Speedboat Tours
+ORG:Mario M Speedboat Tours Croatia
+TITLE:Speedboat Captain & Charter Manager
 TEL;TYPE=CELL,VOICE:+385923252445
-NOTE:Speedboat rentals, Blue Lagoon & Trogir/Maslinica tours in Croatia.
+NOTE:Speedboat excursions to Blue Lagoon, Trogir & Maslinica.
 URL:https://wa.me/385923252445
 END:VCARD`;
 
             const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
+            link.href = url;
             link.setAttribute('download', 'Mario_M_Speedboat_Tours.vcf');
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            showToast("vCard downloaded! You can save Mario to your contacts.");
         }
     </script>
 </body>
